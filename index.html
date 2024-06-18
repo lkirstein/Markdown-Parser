@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Markdown to HTML</title>
+
+    <script src="./res/js/parser.js"></script>
+
+    <!-- <link rel="stylesheet" href="./res/css/styler.css"> -->
+
+</head>
+<body>
+    
+    <script>
+        function startParser() {
+            var mdin = document.getElementById("mdi").value;
+            document.getElementById("html-render-panel").innerHTML = convertMarkdownToHtml(mdin);
+            document.getElementById("mdo").value = convertMarkdownToHtml(mdin);
+        }
+
+        function copyContent() {
+            
+        }
+    </script>
+
+    <header>
+        <h1>Markdown to HTML</h1>
+        <p>This JS-Script let's you convert Markdown to HTML using Regular Expressions.</p>
+    </header>
+
+
+    <div id="markdown-in-panel" class="input">
+        <textarea name="Markdown-Input" id="mdi" placeholder="Input"></textarea>
+        <input type="button" value="Convert!" onclick="startParser()">
+    </div>
+
+    <div id="html-out-panel" class="output">
+        <textarea name="mdo" id="mdo" placeholder="Output"></textarea>
+        <input type="button" value="Copy!" onclick="copyContent()">
+    </div>
+   
+
+    <div id="html-render-panel" class="render">
+
+    </div>
+
+    <footer>
+        <h3>Copyright &copy; Léon Kirstein 2024</h3>
+    </footer>
+
+</body>
+</html>
