@@ -7,6 +7,12 @@ This Project is currently **WIP** and I made the first version of the parser in 
 ### Goals & Features
 - Markdown Parsing
     - [ ] Parse Markdown to HTML using RegEx
+        - [X] Headers
+        - [X] Formatting
+        - [ ] Blocks
+        - [X] Links
+        - [X] Escaping
+        - [ ] Tables
 - Extensions
     - [ ] Create your own parsing rules 
 
