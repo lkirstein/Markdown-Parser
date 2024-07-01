@@ -165,7 +165,16 @@ function parseLink(input) {
  * This function creates HTML paragraphs out of Markdown content.
  */
 function parseParagraph(input) {
-    return input.split('\n\n').map(parag => `<p>${parag}</p>`).join('');
+    const paragraphRegex = /^(?!<h[1-6]>)(.+)$/gm;
+    input = input.replace(paragraphRegex, (match, content) => {
+        return `<p>${content}</p>`;
+    });
+
+    // Entferne unnötige Paragraphen um Überschriften
+    input = input.replace(/<\/p>\s*(<h[1-6]>)/g, '$1');
+    input = input.replace(/(<\/h[1-6]>)\s*<p>/g, '$1');
+
+    return input;
 }
 
 /**
